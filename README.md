@@ -64,7 +64,9 @@ terraform apply
 Using the AWS Console
 
 1: Choose Upload a template file
+
 2: Upload aws-infra-stack.yaml
+
 3:Provide
   Your EC2 Key Pair name
   A valid AMI ID (Amazon Linux 2 for your region)
