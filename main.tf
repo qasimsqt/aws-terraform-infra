@@ -80,11 +80,11 @@ resource "aws_security_group" "web_sg" {
 
 # Create an EC2 instance
 resource "aws_instance" "web" {
-  ami           = "ami-0c94855ba95c71c99"  # Amazon Linux 2 (can be changed)
+  ami = "ami-08a6efd148b1f7504"  # Amazon Linux 2 (can be changed)
   instance_type = var.instance_type
-  subnet_id     = aws_subnet.public.id
-  security_groups = [aws_security_group.web_sg.name]
-  key_name      = "your-key-name"  # Update with your actual key 
+  subnet_id = aws_subnet.public.id
+  vpc_security_group_ids = [aws_security_group.web_sg.id]
+  key_name = "your-key-name"  # Update with your actual key 
 
   tags = {
     Name = "${var.project_name}-web"
